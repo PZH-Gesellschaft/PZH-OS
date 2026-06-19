@@ -55,6 +55,9 @@ section .text
 
 	efi_save_functions:
 
+		mov qword [image_handle], rcx ;; Save Image Hanlde
+		mov qword [system_table], rdx ;; Save System Table
+
 		mov rax, qword [rdx + EFI_SYSTEM_TABLE.ConOut]
 		mov rcx, qword [rax + EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL.OutputString]
 

@@ -62,9 +62,6 @@ efi_main:
 
 	call efi_save_functions
 
-	mov qword [image_handle], rcx ;; Save Image Hanlde
-	mov qword [system_table], rdx ;; Save System Table
-
 	lea  rdi, msg
 	call puts
 
